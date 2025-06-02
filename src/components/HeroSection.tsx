@@ -34,7 +34,7 @@ export default function HeroSection() {
                         </div>
                     </div>
                 </div>
-                <div className='flex text-white justify-between mt-[2rem]'>
+                <div className='flex w-full text-white justify-between mt-[2rem]'>
                     <p className=' text-[3rem] leading-tight '>
                         Hotdesks for Every <br /> Workstyle, in Every <br /> Neighborhood.
                     </p>
