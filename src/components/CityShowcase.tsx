@@ -10,7 +10,6 @@ const CityShowcase = () => {
     md: 300,     // px for medium screens
     lg: 400      // px for large screens
 };
-const CARD_GAP = 20; // px
 
 // Helper to get card width based on window size
 function getCardWidth() {

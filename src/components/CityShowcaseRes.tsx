@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import hyd from '../assets/hyderabad.png';
 import mumb from '../assets/mumbai.png';
