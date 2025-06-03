@@ -31,15 +31,15 @@ export default function FaqSection() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-16 mt-[5rem]">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+    <div className="max-w-3xl mx-auto px-4 py-16 mt-[2rem]">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-[#222222]">
         Frequently Asked Questions
       </h2>
       <p className="text-center text-gray-500 mb-10">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
       </p>
 
-      <div className="space-y-4">
+      <div className="space-y-4 mt-[5rem]">
         {faqItems.map((item, index) => (
           <div
             key={index}
@@ -48,6 +48,9 @@ export default function FaqSection() {
             <button
               onClick={() => toggleItem(index)}
               className="flex justify-between items-center w-full text-left"
+              style={{
+                background: 'linear-gradient(to right, #FFFFFF45 27%, #FFFFFF87 53%)'
+              }}
             >
               <span className="text-lg font-medium">
                 {item.question}

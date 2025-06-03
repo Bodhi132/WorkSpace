@@ -1,48 +1,47 @@
-// components/HeroSection.tsx
-
-import backgroundImg from '../assets/Shadow.png'
+import backgroundImg from '../assets/Shadow.png';
 
 export default function HeroSection() {
     return (
         <div
-            className="relative h-screen bg-cover bg-center"
+            className="relative h-screen bg-cover bg-center text-white"
             style={{ backgroundImage: `url(${backgroundImg})` }}
         >
+            {/* Overlay container */}
+            <div className="z-10 flex flex-col h-full px-6 pt-[2rem] lg:pt-[4rem] xl:pt-[7rem] md:px-10 lg:px-24">
+                {/* Stats section */}
+                <div className="flex flex-col md:space-x-12 gap-10">
+                    {/* Cities */}
+                    <div className="flex items-center gap-5 h-24">
+                        <div className="h-full border-l-2 border-white"></div>
+                        <div className="flex flex-col justify-between h-full">
+                            <div className="text-4xl sm:text-5xl font-semibold leading-none">17+</div>
+                            <div className="text-sm sm:text-base ml-2">Cities</div>
+                        </div>
+                    </div>
 
-            {/* Content */}
-            <div className="z-10 flex flex-col h-full px-8 py-12 md:px-16 lg:px-24">
-                <div>
-                    <div className="text-white max-w-xl">
-                        <div className="flex flex-col items-start space-y-10 text-white text-left">
-                            {/* 17+ Cities */}
-                            <div className="flex items-center space-x-4">
-                                <div className="h-16 border-l-2 border-white"></div>
-                                <div>
-                                    <div className="text-[5rem]">17+</div>
-                                    <div className="text-base">Cities</div>
-                                </div>
-                            </div>
-
-                            {/* 100+ Hotdesks */}
-                            <div className="flex items-center space-x-4">
-                                <div className="h-16 border-l-2 border-white"></div>
-                                <div>
-                                    <div className="text-[5rem]">100+</div>
-                                    <div className="text-base">Hotdesks</div>
-                                </div>
-                            </div>
+                    {/* Hotdesks */}
+                    <div className="flex items-center gap-5 h-24">
+                        <div className="h-full border-l-2 border-white"></div>
+                        <div className="flex flex-col justify-between h-full">
+                            <div className="text-4xl sm:text-5xl font-semibold leading-none">100+</div>
+                            <div className="text-sm sm:text-base ml-2">Hotdesks</div>
                         </div>
                     </div>
                 </div>
-                <div className='flex w-full text-white justify-between mt-[2rem]'>
-                    <p className=' text-[3rem] leading-tight '>
+
+                {/* Headline and Description */}
+                <div className="flex flex-col md:flex-row justify-between items-start mt-12 space-y-10 md:space-y-0 md:space-x-10">
+                    <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-snug md:leading-tight max-w-md font-semibold">
                         Hotdesks for Every <br /> Workstyle, in Every <br /> Neighborhood.
                     </p>
-                    <div className='flex flex-col justify-between'>
-                        <p className=' pt-[4rem]'>
-                            At Desklinq, every hotdesk is designed for flexibility, <br /> focus, and modern work—wherever you are.
+
+                    <div className="flex flex-col space-y-4 md:max-w-xl">
+                        <p className="text-sm sm:text-base md:text-md pt-[3.5rem]">
+                            At Desklinq, every hotdesk is designed for flexibility, <br className="hidden md:block" />
+                            focus, and modern work—wherever you are.
                         </p>
-                        <button className='self-start text-black px-4 py-2 rounded-md'
+                        <button
+                            className="self-start text-black px-4 py-2 rounded-md font-medium text-sm sm:text-base"
                             style={{
                                 background: "linear-gradient(180deg, #FFFFFF 53%, #FFFFFF 27%)",
                                 backdropFilter: "blur(6px)",

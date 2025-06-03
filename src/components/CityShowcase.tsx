@@ -4,7 +4,29 @@ import hyd from '../assets/hyderabad.png';
 import mumb from '../assets/mumbai.png';
 
 const CityShowcase = () => {
+    const CARD_WIDTHS = {
+    base: 220,   // px for mobile
+    sm: 280,     // px for small screens
+    md: 300,     // px for medium screens
+    lg: 400      // px for large screens
+};
+const CARD_GAP = 20; // px
+
+// Helper to get card width based on window size
+function getCardWidth() {
+    if (window.innerWidth >= 1024) return CARD_WIDTHS.lg;
+    if (window.innerWidth >= 768) return CARD_WIDTHS.md;
+    if (window.innerWidth >= 640) return CARD_WIDTHS.sm;
+    return CARD_WIDTHS.base;
+}
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [cardWidth, setCardWidth] = useState(getCardWidth());
+
+        useEffect(() => {
+        const handleResize = () => setCardWidth(getCardWidth());
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const elements = [
         { id: 1, img: hyd, text: 'Hyderabad' },
@@ -23,14 +45,14 @@ const CityShowcase = () => {
     }, []);
 
     return (
-        <div className='px-8 py-12 md:px-16 lg:px-24'>
-            <div className="w-full relative h-[600px] overflow-hidden ">
-                <div className="absolute left-[40%] top-[10rem] max-w-xl text-gray-800">
-                    <p className="text-4xl font-semibold mb-2">
+        <div className='px-8 py-12 md:px-16 lg:px-20 h-screen'>
+            <div className="w-full relative h-full overflow-hidden ">
+                <div className="absolute lg:left-[50%] lg:top-[12rem] xl:left-[40%] 2xl:left-[32%] xl:top-[14rem] 2xl:top-[10rem] text-gray-800">
+                    <p className="text-4xl font-semibold mb-4">
                         Unlock the Perfect <br />
-                        <span className='text-blue-600'>Hotdesk in Every City.</span>
+                        <span className='text-[#6011E8]'>Hotdesk in Every City.</span>
                     </p>
-                    <p className="text-sm leading-relaxed">
+                    <p className="lg:text-base font-medium leading-relaxed">
                         From Mumbai’s hustle to Bengaluru’s tech corridors, Desklinq brings flexible <br />
                         workspaces to every metro city in India. Wherever you go, your next hotdesk is <br />
                         already there—ready when you are.
@@ -38,9 +60,9 @@ const CityShowcase = () => {
                 </div>
 
                 <motion.div
-                    className="flex gap-6 absolute top-[10rem] items-end w-full"
-                    animate={{ x: `-${currentIndex * 25}%` }}
-                    transition={{ duration: 0.5, ease: 'easeInOut' }}
+                    className="flex absolute items-end w-full h-full"
+                    animate={{ x: `calc(-${currentIndex * cardWidth}px - ${20 * currentIndex}px)` }}
+                    transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
                 >
                     {elements.map((item, index) => {
                         const isActive = index === currentIndex;
@@ -48,7 +70,8 @@ const CityShowcase = () => {
                         return (
                             <div
                                 key={item.id}
-                                className={`w-1/4 flex-shrink-0 relative p-0 rounded-lg overflow-hidden text-center transition-all duration-500 ${isActive ? 'bg-purple-100 h-[400px]' : 'bg-gray-100 h-[200px]'
+                                style={{ width: `${cardWidth}px` }}
+                                className={` flex-shrink-0 relative p-0 rounded-lg overflow-hidden text-center transition-all duration-500 mr-[20px] ${isActive ? 'bg-purple-100 h-full text-[3rem]' : 'bg-gray-100 text-[1.5rem] h-[250px]'
                                     }`}
                             >
                                 <img
@@ -56,7 +79,7 @@ const CityShowcase = () => {
                                     alt={item.text}
                                     className="w-full h-full object-cover"
                                 />
-                                <p className="absolute bottom-0 left-0 w-full text-white text-sm font-medium py-2 m-0">
+                                <p className="absolute bottom-[2rem] left-0 w-full text-white font-medium py-2 m-0">
                                     {item.text}
                                 </p>
                             </div>
