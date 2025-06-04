@@ -34,7 +34,7 @@ const Footer = () => {
           {/* Right Grid */}
           <div className=" grid grid-cols-2 md:grid-cols-4 gap-6">
             <ul className="space-y-2 text-gray-400">
-              <li className="text-white">Company</li>
+              <li>Company</li>
               <li>Features</li>
               <li>Pricing</li>
               <li>About Us</li>
@@ -42,7 +42,7 @@ const Footer = () => {
               <li>Pricing</li>
             </ul>
             <ul className="space-y-2 text-gray-400">
-              <li className="text-white">Resource</li>
+              <li>Resource</li>
               <li>Blog</li>
               <li>Customer Stories</li>
               <li>Information</li>
@@ -50,14 +50,14 @@ const Footer = () => {
               <li>Payments</li>
             </ul>
             <ul className="space-y-2 text-gray-400">
-              <li className="text-white">Career</li>
+              <li>Career</li>
               <li>Jobs</li>
               <li>Hiring</li>
               <li>News</li>
               <li>Tips & Tricks</li>
             </ul>
             <ul className="space-y-2 text-gray-400">
-              <li className="text-white">Help</li>
+              <li>Help</li>
               <li>FAQ</li>
               <li>Help Center</li>
               <li>Support</li>
