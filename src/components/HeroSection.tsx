@@ -1,6 +1,10 @@
 import backgroundImg from '../assets/Shadow.png';
 
 export default function HeroSection() {
+    function gradient(to: any, right: any, arg2: any, arg3: any) {
+        throw new Error('Function not implemented.');
+    }
+
     return (
         <div
             className="relative h-screen bg-cover bg-center text-white"
@@ -41,10 +45,10 @@ export default function HeroSection() {
                             focus, and modern work—wherever you are.
                         </p>
                         <button
-                            className="self-start text-black px-4 py-2 rounded-md font-medium text-sm sm:text-base"
+                            className="self-start text-white px-4 py-3 rounded-md text-[0.5rem] sm:text-base cursor-pointer"
                             style={{
-                                background: "linear-gradient(180deg, #FFFFFF 53%, #FFFFFF 27%)",
-                                backdropFilter: "blur(6px)",
+                                background: "linear-gradient(to bottom, rgba(255, 255, 255, 0.73), rgba(255, 255, 255, 0.33))",
+                                backdropFilter: "blur(80%)",
                             }}
                         >
                             Get Started

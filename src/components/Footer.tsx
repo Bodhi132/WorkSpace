@@ -1,65 +1,80 @@
-import { FaYoutube, FaTiktok, FaLinkedinIn, FaInstagram, FaFacebookF } from 'react-icons/fa';
+import {
+  FaYoutube,
+  FaTiktok,
+  FaLinkedin,
+  FaInstagram,
+  FaFacebookF,
+} from 'react-icons/fa';
+import logo from '../assets/logoFooter.png';
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-12 px-6 md:px-16 mt-[2rem]">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
+    <footer className="bg-black text-white w-full px-6 md:px-24 py-10 text-sm mt-10">
+      {/* Container to align everything */}
+      <div className=" mx-auto w-full">
+        {/* Top Section */}
+        <div className="flex flex-col md:flex-row justify-between gap-10 pb-8 w-full">
+          {/* Left */}
+          <div className=" min-w-[200px]">
+            <div className="flex items-center gap-2 mb-2 h-6">
+              <img src={logo} alt="Desklinq Logo" className="h-full object-contain" />
+              <p className="text-2xl font-bold leading-none">Desklinq</p>
+            </div>
+            <p className="text-gray-300 mb-1 mt-3">Address</p>
+            <p className="mb-4 text-gray-400">(248) 823-3200</p>
+            <div className="flex gap-8 text-xl text-gray-400 mt-10">
+              <FaYoutube className="hover:text-white cursor-pointer" />
+              <FaTiktok className="hover:text-white cursor-pointer" />
+              <FaLinkedin className="hover:text-white cursor-pointer" />
+              <FaInstagram className="hover:text-white cursor-pointer" />
+              <FaFacebookF className="hover:text-white cursor-pointer" />
+            </div>
+          </div>
 
-        {/* Left Section */}
-        <div className="space-y-4">
-          <h1 className="text-2xl font-semibold">Desklinq</h1>
-          <p className="text-sm text-gray-400">Address</p>
-          <p className="text-sm text-gray-400">(248) 823-3200</p>
-          <div className="flex gap-4 pt-2">
-            <FaYoutube className="text-xl hover:text-red-600 transition" />
-            <FaTiktok className="text-xl hover:text-white transition" />
-            <FaLinkedinIn className="text-xl hover:text-blue-500 transition" />
-            <FaInstagram className="text-xl hover:text-pink-500 transition" />
-            <FaFacebookF className="text-xl hover:text-blue-700 transition" />
+          {/* Right Grid */}
+          <div className=" grid grid-cols-2 md:grid-cols-4 gap-6">
+            <ul className="space-y-2 text-gray-400">
+              <li className="text-white">Company</li>
+              <li>Features</li>
+              <li>Pricing</li>
+              <li>About Us</li>
+              <li>Contact</li>
+              <li>Pricing</li>
+            </ul>
+            <ul className="space-y-2 text-gray-400">
+              <li className="text-white">Resource</li>
+              <li>Blog</li>
+              <li>Customer Stories</li>
+              <li>Information</li>
+              <li>Legal</li>
+              <li>Payments</li>
+            </ul>
+            <ul className="space-y-2 text-gray-400">
+              <li className="text-white">Career</li>
+              <li>Jobs</li>
+              <li>Hiring</li>
+              <li>News</li>
+              <li>Tips & Tricks</li>
+            </ul>
+            <ul className="space-y-2 text-gray-400">
+              <li className="text-white">Help</li>
+              <li>FAQ</li>
+              <li>Help Center</li>
+              <li>Support</li>
+            </ul>
           </div>
         </div>
 
-        {/* Columns */}
-        <div className="space-y-2 text-sm">
-          <p className="font-medium">Company</p>
-          <p>Features</p>
-          <p>Pricing</p>
-          <p>About Us</p>
-          <p>Contact</p>
-          <p>Pricing</p>
-        </div>
+        {/* Horizontal line only under the 4 columns */}
+        <div className="border-t border-gray-700 my-6 w-full" />
 
-        <div className="space-y-2 text-sm">
-          <p className="font-medium">Resource</p>
-          <p>Blog</p>
-          <p>Customer Stories</p>
-          <p>Information</p>
-          <p>Legal</p>
-          <p>Payments</p>
-        </div>
-
-        <div className="space-y-2 text-sm">
-          <p className="font-medium">Career</p>
-          <p>Jobs</p>
-          <p>Hiring</p>
-          <p>News</p>
-          <p>Tips & Tricks</p>
-        </div>
-
-        <div className="space-y-2 text-sm">
-          <p className="font-medium">Help</p>
-          <p>FAQ</p>
-          <p>Help Center</p>
-          <p>Support</p>
-        </div>
-      </div>
-
-      {/* Bottom Bar */}
-      <div className="border-t border-gray-800 mt-12 pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-gray-400">
-        <p>© Copyright 2024, Desklinq All Rights Reserved</p>
-        <div className="flex gap-4 mt-2 md:mt-0">
-          <a href="#" className="hover:text-white">Term of Service</a>
-          <a href="#" className="hover:text-white">Privacy Policy</a>
+        {/* Bottom Section aligned to same container */}
+        <div className="flex flex-col md:flex-row justify-between items-center pt-6 text-gray-500 text-xs">
+          <p>© Copyright 2024, Desklinq All Rights Reserved</p>
+          <div className="flex gap-4 mt-2 md:mt-0">
+            <a href="#" className="hover:underline">Term of Service</a>
+            <a href="#" className="hover:underline">Privacy Policy</a>
+          </div>
         </div>
       </div>
     </footer>
