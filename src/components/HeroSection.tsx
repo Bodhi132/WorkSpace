@@ -1,9 +1,6 @@
 import backgroundImg from '../assets/Shadow.png';
 
 export default function HeroSection() {
-    function gradient(to: any, right: any, arg2: any, arg3: any) {
-        throw new Error('Function not implemented.');
-    }
 
     return (
         <div
